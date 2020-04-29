@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulyator</title>
+  <style>
+ body{
+   background-color: blue;
+   color: cornsilk;
+ }
+ #game{
+   background-color: darkgrey;
+   margin: 20px auto;
+   width: 400px;
+   height: 200px;
+ }
+ p{
+   display: inline-block;
+ }
+ h1{
+  text-align: center;
+ }
+
+
+  </style>
+</head>
+<body>
+  <div id="game">
+    <h1>Riyazi Hesablamalar</h1>
+    <input type="text"  id="one" placeholder="Reqem Daxil Edin">
+    <input type="text"  id="two"  placeholder="Reqem Daxil Edin">
+    <p>Riyazi emel sec:</p>
+    <input type="button" value="+" id="toplama" onclick="dordElement()">
+    <input type="button" value="-" id="cixma" onclick="dordElement()">
+    <input type="button" value="*" id="vurma" onclick="dordElement()">
+    <input type="button" value="/" id="bolme" onclick="dordElement()">
+    <div></div>
+    <p>Netice :</p>
+    <span id="cavab"></span>
+  </div>
+
+
+<script>
+
+  function dordElement(){
+      let x = Number(document.getElementById("one").value);
+      let y = Number(document.getElementById("two").value);
+  let yekun=0;
+  if(event.target.id == "toplama"){
+    yekun = x + y;   
+    console.log(event.target);
+  }else if(event.target.id == "cixma"){
+    yekun = x - y;
+    console.log(event.target);
+  }else if(event.target.id == "vurma"){
+    yekun = x * y;
+    console.log(event.target);
+  }else if(event.target.id == "bolme"){
+    yekun = x / y;
+    console.log(event.target);
+  }
+  document.getElementById("cavab").innerHTML=yekun;
+}
+
+</script> 
+</body>
+</html>
